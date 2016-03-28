@@ -1,0 +1,219 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>2013学年总结之设计模式篇 - 苍耳的技术博客</title>
+	<meta name="author" content="苍耳">
+
+	
+	<meta name="description" content="2013学年总结之设计模式篇 总结一下了解的设计模式 工厂方法和抽象工厂 这个是我们用的最多的设计模式也是最简单的设计模式，可能大家平时都用了。 需要注意的是，抽象工厂如果需要运行时类型判断的话，最好还是重新看下自己的设计，毕竟运行时类型是逼不得已的手段。 生成器 (Build) &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="苍耳的技术博客" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://djs66256.github.io/blog/2014/08/03/2013%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AF%87/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+    <script src="//cdn.bootcss.com/jquery/3.0.0-beta1/jquery.min.js"></script>
+	
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("djs66256@163.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
+<nav id="main-nav"><p style="font-size: 2em">苍耳的博客</p>
+<ul class="main">
+    <li><a href="/">博客</a></li>
+    <li><a href="/blog/archives">所有文章</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:djs66256@163.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/djs66256" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">2013学年总结之设计模式篇</h1>
+	<div class="entry-content" itemprop="articleBody"><p>总结一下了解的设计模式</p>
+
+<!--more-->
+
+
+<h2>工厂方法和抽象工厂</h2>
+
+<p>这个是我们用的最多的设计模式也是最简单的设计模式，可能大家平时都用了。</p>
+
+<p>需要注意的是，抽象工厂如果需要运行时类型判断的话，最好还是重新看下自己的设计，毕竟运行时类型是逼不得已的手段。</p>
+
+<h2>生成器 (Build)</h2>
+
+<p>生成器主要用于拼装数据，典型的比如网络请求数据，二进制数据等，和工厂方法不一样的地方是可以慢慢瓶装。</p>
+
+<p>生成器在我们需要比较复杂的数据而不想暴露数据结构和实现的时候比较适合。</p>
+
+<h2>原型 (prototype)</h2>
+
+<p>原型模式其实OC这门语言可以说是基于原型的，还有一门非常典型的语言javascript，原型主要靠拷贝原型来实例化对象，实际应用中比较少。</p>
+
+<h2>单例 (singleton)</h2>
+
+<p>这个是常见的不能再常见的模式，但是单例的缺陷也很大，首先是初始化循环问题，还有内存问题，破坏封装等等。由于单例就相当于全局变量，在不必要的地方最好不要使用单例。</p>
+
+<h2>适配器 (adapter) / 桥接 (bridge)</h2>
+
+<p>适配器和桥接都是接口的适配，但是作用有些不一样。</p>
+
+<p>适配器可以分为继承适配器和成员适配器，两者各有各的应用场景，主要是做接口的适配</p>
+
+<p>桥接做了接口适配，但主要目的是为了动态配置和复用其他接口代码。</p>
+
+<h2>组合 (composite) / 响应链 (responder)</h2>
+
+<p>组合和响应链可以说是天生的一对，组合模式是自顶向下的，比如UIView的结构，一层一层往下，而响应链刚好相反，是从最底层发起，一直把事件往上抛，直到有人能处理为止，比如touch事件。</p>
+
+<h2>装饰 (decorator) / 策略 (strategy)</h2>
+
+<p>装饰和策略的目的都是一样的，都是改变一个对象的行为，比如给数据流加上缓存功能，给请求加上加密。</p>
+
+<p>装饰主要是修饰一个方法或者一个类来改变行为，主要是添加一些其他行为，比如缓存等。这样既能保持原来的接口和代码，又能增加修饰。</p>
+
+<p>而策略主要是配置不同的行为，比如不同的加密方式，一般策略是作为一个成员来控制行为，这样既能保证封装，又能在有限的范围内添加行为。</p>
+
+<h2>外观 (facade)</h2>
+
+<p>外观非常简单，主要是为了提供给外部一个统一的接口，而隐藏内部实现。主要应用在类库中。</p>
+
+<h2>享元 (flyweight)</h2>
+
+<p>享元主要是为了使用共享内存，比如字体等比较耗内存的地方。</p>
+
+<h2>命令 (command)</h2>
+
+<p>命令模式主要把行为封装，可以动态的配置行为，这个用已有的多自己写比较少</p>
+
+<h2>解释器 (interpreter)</h2>
+
+<p>这个主要用在解释语言上，比较少见</p>
+
+<h2>迭代器 (iterator)</h2>
+
+<p>非常常见的模式，隐藏了内部实现来解决遍历问题。</p>
+
+<h2>中介者 (mediator)</h2>
+
+<p>在很多场景下，我们并不能整理出层次关系，或者模块间本来就很独立，这样相互交互导致了网状结构，从而一片混乱。中介者把网状结构改变为星型结构，所有模块都与中介者交互，这样能够独立模块，减少耦合度。但同时也有个问题，就是中介者有可能成为一个很复杂的模块。</p>
+
+<h2>备忘录 (memento)</h2>
+
+<p>这个相当于undo manager，一般用的比较少，往往和命令模式一起使用，只是命令中除了行为外还需要取消行为的方法，这是实现撤销功能的一种方法。</p>
+
+<h2>观察者 (observer)</h2>
+
+<p>这个在ios中也非常常见，主要应用场景是接受者未知，而且数量未知。</p>
+
+<h2>状态 (state)</h2>
+
+<p>这是个封装一般性行为的模式，比如网络连接，中间有很多状态，但连接、重连、断开行为都是一样的，使用状态模式来封装这些行为，而连接失败等业务行为放在子类中实现，从而避免了网络行为中参杂一些其他逻辑。</p>
+
+<h2>模板 (template)</h2>
+
+<p>这个典型的时UIApplication和UIViewController，把公共的方法提取到父类，具体业务放到子类，相当于抽象类的作用</p>
+
+<h2>访问者 (visitor)</h2>
+
+<p>访问者和迭代器在功能上很类似，但是从设计上很不同，迭代器如果遍历不同对象时，必须要用到运行时类型检查，从而导致一个问题，在对象类型越来越多的情况下，这里会越来越复杂，而且增加一种类型每个这种地方都要修改。visitor模式能够封装这些类型，如果增加一种类型，只要修改visitor类就可以了。好处显而易见，但坏处也是有的，增加了封装，导致更加抽象，对于一些不熟悉的人来说可能会有些麻烦。</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2016
+
+    苍耳
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

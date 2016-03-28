@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 工具 | 苍耳的技术博客]]></title>
+  <link href="http://djs66256.github.io/blog/categories/gong-ju/atom.xml" rel="self"/>
+  <link href="http://djs66256.github.io/"/>
+  <updated>2016-03-28T17:31:42+08:00</updated>
+  <id>http://djs66256.github.io/</id>
+  <author>
+    <name><![CDATA[苍耳]]></name>
+    <email><![CDATA[djs66256@163.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[2013学年总结之工具篇]]></title>
+    <link href="http://djs66256.github.io/blog/2014/08/03/2013%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93%E4%B9%8B%E5%B7%A5%E5%85%B7%E7%AF%87/"/>
+    <updated>2014-08-03T00:00:00+08:00</updated>
+    <id>http://djs66256.github.io/blog/2014/08/03/2013学年总结之工具篇</id>
+    <content type="html"><![CDATA[<h4>git/svn &amp; markdown &amp; vim &amp; dash/zeal</h4>
+
+<!--more-->
+
+
+<h2>Git/Svn</h2>
+
+<p>在软件开发和很多场景下，我们都需要版本管理工具，现在最流行的就有svn和git，svn使用非常简单，最常用的命令如下：</p>
+
+<pre><code>svn checkout
+svn update
+svn commit
+svn log
+</code></pre>
+
+<p>同时svn也拥有很多的图形客户端，对那些不是开发人员的人也比较友好。但是svn有个致命的弱点，就是不能脱离服务器，对于平时使用时还是有很多不便。而且svn对于分支开发支持也不太友好。</p>
+
+<p>还好，我们有git来解决svn的问题。git的使用稍微比svn麻烦一些，需要了解一些分支等的概念，但是作为日常使用也和svn差不多，比较常用的命令有：</p>
+
+<pre><code>git init
+git clone
+git checkout
+git add
+git commit 
+git fetch/pull
+git push
+git rebase / merge
+git log
+</code></pre>
+
+<p>总体使用上感觉如果是一些比较复杂的需要多人开发的，而且项目比较大型，周期比较长，或者需要并行开发的都适合使用git。这是一个非常有用的工具。</p>
+
+<p>git的图形软件有：</p>
+
+<pre><code>SourceTree
+github
+</code></pre>
+
+<h2>Markdown</h2>
+
+<p>作为富文本文件格式，markdown比word更加简单轻便，而且适用场景多，可以直接翻译为html，特别适合网络文档，同时对代码的支持也比较好。甚至可以直接支持html，对普通的文档博客来说已经足够了。</p>
+
+<p>客户端程序有：</p>
+
+<pre><code>haroopad/Mou
+</code></pre>
+
+<h2>VIM</h2>
+
+<p>这个是UNIX环境必备的编辑工具，而且使用起来也不必使用鼠标慢。</p>
+
+<h2>VIMDIFF</h2>
+
+<p>这个diff工具非常强大，但是全部使用键盘，感觉没有使用鼠标舒服，但是偶尔用用还是非常不错的</p>
+
+<pre><code>]c / [c
+dp / do
+zo / zc
+</code></pre>
+
+<p>配合git的difftool和mergetool，还是不错的。</p>
+
+<h2>Dash/Zeal</h2>
+
+<p>说到官方文档，mac下面有个非常好用的工具Dash，但是一直遗憾win和linux环境下一直没有一个适合的工具，直到有个开源项目的开始Zeal，现在Zeal已经比较完善了，几乎可以媲美Dash了。Zeal在github上有托管。</p>
+]]></content>
+  </entry>
+  
+</feed>

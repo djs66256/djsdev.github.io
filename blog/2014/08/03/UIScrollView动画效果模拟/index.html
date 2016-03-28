@@ -1,0 +1,147 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>UIScrollView动画效果模拟 - 苍耳的技术博客</title>
+	<meta name="author" content="苍耳">
+
+	
+	<meta name="description" content="UIScrollView动画效果模拟 当年苹果手机发布的时候，大家都惊叹于流畅的滑动效果，也就是UIScrollView的效果。现在由于工作中有个需要，能够模拟系统的滑动效果，因此开始了研究。目前代码托管在github上。 首先这里肯定不是CAAnimation的效果， &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="苍耳的技术博客" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://djs66256.github.io/blog/2014/08/03/UIScrollView%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C%E6%A8%A1%E6%8B%9F/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+    <script src="//cdn.bootcss.com/jquery/3.0.0-beta1/jquery.min.js"></script>
+	
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("djs66256@163.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
+<nav id="main-nav"><p style="font-size: 2em">苍耳的博客</p>
+<ul class="main">
+    <li><a href="/">博客</a></li>
+    <li><a href="/blog/archives">所有文章</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:djs66256@163.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/djs66256" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">UIScrollView动画效果模拟</h1>
+	<div class="entry-content" itemprop="articleBody"><p>当年苹果手机发布的时候，大家都惊叹于流畅的滑动效果，也就是UIScrollView的效果。现在由于工作中有个需要，能够模拟系统的滑动效果，因此开始了研究。目前代码托管在<a href="https://github.com/djs66256/DDScrollView">github</a>上。</p>
+
+<!--more-->
+
+
+<p>首先这里肯定不是CAAnimation的效果，那么我们使用CADisplayLink来实现这个效果。</p>
+
+<h2>弹性效果</h2>
+
+<p>当我们拉出边界的时候，会有一个弹性的回弹效果。看系统的效果，应该是一个时间固定的动画效果。开始我想可能是模拟摩擦力的效果，demo中使用的也是摩擦力效果，但实际上和系统的效果做比较后发现有些细微的区别，系统可能使用的是双曲线的模型。但也有点像模像样了。</p>
+
+<h2>惯性效果</h2>
+
+<p>在我们拖动停止的时候，我们还有个惯性效果，同样的我们这里使用摩擦的效果。和系统对比后发现系统比摩擦效果更加的圆滑，系统应该用的还是双曲线效果。</p>
+
+<p>还有惯性结束后的碰撞效果我也是模拟摩擦力，不过系统好像也是双曲线模型，感觉系统的效果更加的平滑，不过和系统的scrollView效果比起来也可以看看了。</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2016
+
+    苍耳
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

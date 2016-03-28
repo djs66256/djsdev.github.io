@@ -1,0 +1,219 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>2013学年总结之工具篇 - 苍耳的技术博客</title>
+	<meta name="author" content="苍耳">
+
+	
+	<meta name="description" content="2013学年总结之工具篇 git/svn &amp; markdown &amp; vim &amp; dash/zeal Git/Svn 在软件开发和很多场景下，我们都需要版本管理工具，现在最流行的就有svn和git，svn使用非常简单，最常用的命令如下： 1
+2
+3
+4
+svn &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="苍耳的技术博客" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://djs66256.github.io/blog/2014/08/03/2013%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93%E4%B9%8B%E5%B7%A5%E5%85%B7%E7%AF%87/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+    <script src="//cdn.bootcss.com/jquery/3.0.0-beta1/jquery.min.js"></script>
+	
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("djs66256@163.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
+<nav id="main-nav"><p style="font-size: 2em">苍耳的博客</p>
+<ul class="main">
+    <li><a href="/">博客</a></li>
+    <li><a href="/blog/archives">所有文章</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:djs66256@163.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/djs66256" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">2013学年总结之工具篇</h1>
+	<div class="entry-content" itemprop="articleBody"><h4>git/svn &amp; markdown &amp; vim &amp; dash/zeal</h4>
+
+<!--more-->
+
+
+<h2>Git/Svn</h2>
+
+<p>在软件开发和很多场景下，我们都需要版本管理工具，现在最流行的就有svn和git，svn使用非常简单，最常用的命令如下：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>svn checkout
+</span><span class='line'>svn update
+</span><span class='line'>svn commit
+</span><span class='line'>svn log</span></code></pre></td></tr></table></div></figure>
+
+
+<p>同时svn也拥有很多的图形客户端，对那些不是开发人员的人也比较友好。但是svn有个致命的弱点，就是不能脱离服务器，对于平时使用时还是有很多不便。而且svn对于分支开发支持也不太友好。</p>
+
+<p>还好，我们有git来解决svn的问题。git的使用稍微比svn麻烦一些，需要了解一些分支等的概念，但是作为日常使用也和svn差不多，比较常用的命令有：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git init
+</span><span class='line'>git clone
+</span><span class='line'>git checkout
+</span><span class='line'>git add
+</span><span class='line'>git commit 
+</span><span class='line'>git fetch/pull
+</span><span class='line'>git push
+</span><span class='line'>git rebase / merge
+</span><span class='line'>git log</span></code></pre></td></tr></table></div></figure>
+
+
+<p>总体使用上感觉如果是一些比较复杂的需要多人开发的，而且项目比较大型，周期比较长，或者需要并行开发的都适合使用git。这是一个非常有用的工具。</p>
+
+<p>git的图形软件有：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SourceTree
+</span><span class='line'>github</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Markdown</h2>
+
+<p>作为富文本文件格式，markdown比word更加简单轻便，而且适用场景多，可以直接翻译为html，特别适合网络文档，同时对代码的支持也比较好。甚至可以直接支持html，对普通的文档博客来说已经足够了。</p>
+
+<p>客户端程序有：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>haroopad/Mou</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>VIM</h2>
+
+<p>这个是UNIX环境必备的编辑工具，而且使用起来也不必使用鼠标慢。</p>
+
+<h2>VIMDIFF</h2>
+
+<p>这个diff工具非常强大，但是全部使用键盘，感觉没有使用鼠标舒服，但是偶尔用用还是非常不错的</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>]c / [c
+</span><span class='line'>dp / do
+</span><span class='line'>zo / zc</span></code></pre></td></tr></table></div></figure>
+
+
+<p>配合git的difftool和mergetool，还是不错的。</p>
+
+<h2>Dash/Zeal</h2>
+
+<p>说到官方文档，mac下面有个非常好用的工具Dash，但是一直遗憾win和linux环境下一直没有一个适合的工具，直到有个开源项目的开始Zeal，现在Zeal已经比较完善了，几乎可以媲美Dash了。Zeal在github上有托管。</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2016
+
+    苍耳
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

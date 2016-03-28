@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[苍耳的技术博客]]></title>
+  <link href="http://djs66256.github.io/atom.xml" rel="self"/>
+  <link href="http://djs66256.github.io/"/>
+  <updated>2016-03-28T17:31:42+08:00</updated>
+  <id>http://djs66256.github.io/</id>
+  <author>
+    <name><![CDATA[苍耳]]></name>
+    <email><![CDATA[djs66256@163.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[test]]></title>
+    <link href="http://djs66256.github.io/blog/2016/03/27/test/"/>
+    <updated>2016-03-27T22:48:03+08:00</updated>
+    <id>http://djs66256.github.io/blog/2016/03/27/test</id>
+    <content type="html"><![CDATA[<h1>测试</h1>
+
+<h4>测试</h4>
+
+<p>就是测试</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>print("faefa");</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[UIScrollView动画效果模拟]]></title>
+    <link href="http://djs66256.github.io/blog/2014/08/03/UIScrollView%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C%E6%A8%A1%E6%8B%9F/"/>
+    <updated>2014-08-03T00:00:00+08:00</updated>
+    <id>http://djs66256.github.io/blog/2014/08/03/UIScrollView动画效果模拟</id>
+    <content type="html"><![CDATA[<p>当年苹果手机发布的时候，大家都惊叹于流畅的滑动效果，也就是UIScrollView的效果。现在由于工作中有个需要，能够模拟系统的滑动效果，因此开始了研究。目前代码托管在<a href="https://github.com/djs66256/DDScrollView">github</a>上。</p>
+
+<!--more-->
+
+
+<p>首先这里肯定不是CAAnimation的效果，那么我们使用CADisplayLink来实现这个效果。</p>
+
+<h2>弹性效果</h2>
+
+<p>当我们拉出边界的时候，会有一个弹性的回弹效果。看系统的效果，应该是一个时间固定的动画效果。开始我想可能是模拟摩擦力的效果，demo中使用的也是摩擦力效果，但实际上和系统的效果做比较后发现有些细微的区别，系统可能使用的是双曲线的模型。但也有点像模像样了。</p>
+
+<h2>惯性效果</h2>
+
+<p>在我们拖动停止的时候，我们还有个惯性效果，同样的我们这里使用摩擦的效果。和系统对比后发现系统比摩擦效果更加的圆滑，系统应该用的还是双曲线效果。</p>
+
+<p>还有惯性结束后的碰撞效果我也是模拟摩擦力，不过系统好像也是双曲线模型，感觉系统的效果更加的平滑，不过和系统的scrollView效果比起来也可以看看了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2013学年总结之设计模式篇]]></title>
+    <link href="http://djs66256.github.io/blog/2014/08/03/2013%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93%E4%B9%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AF%87/"/>
+    <updated>2014-08-03T00:00:00+08:00</updated>
+    <id>http://djs66256.github.io/blog/2014/08/03/2013学年总结之设计模式篇</id>
+    <content type="html"><![CDATA[<p>总结一下了解的设计模式</p>
+
+<!--more-->
+
+
+<h2>工厂方法和抽象工厂</h2>
+
+<p>这个是我们用的最多的设计模式也是最简单的设计模式，可能大家平时都用了。</p>
+
+<p>需要注意的是，抽象工厂如果需要运行时类型判断的话，最好还是重新看下自己的设计，毕竟运行时类型是逼不得已的手段。</p>
+
+<h2>生成器 (Build)</h2>
+
+<p>生成器主要用于拼装数据，典型的比如网络请求数据，二进制数据等，和工厂方法不一样的地方是可以慢慢瓶装。</p>
+
+<p>生成器在我们需要比较复杂的数据而不想暴露数据结构和实现的时候比较适合。</p>
+
+<h2>原型 (prototype)</h2>
+
+<p>原型模式其实OC这门语言可以说是基于原型的，还有一门非常典型的语言javascript，原型主要靠拷贝原型来实例化对象，实际应用中比较少。</p>
+
+<h2>单例 (singleton)</h2>
+
+<p>这个是常见的不能再常见的模式，但是单例的缺陷也很大，首先是初始化循环问题，还有内存问题，破坏封装等等。由于单例就相当于全局变量，在不必要的地方最好不要使用单例。</p>
+
+<h2>适配器 (adapter) / 桥接 (bridge)</h2>
+
+<p>适配器和桥接都是接口的适配，但是作用有些不一样。</p>
+
+<p>适配器可以分为继承适配器和成员适配器，两者各有各的应用场景，主要是做接口的适配</p>
+
+<p>桥接做了接口适配，但主要目的是为了动态配置和复用其他接口代码。</p>
+
+<h2>组合 (composite) / 响应链 (responder)</h2>
+
+<p>组合和响应链可以说是天生的一对，组合模式是自顶向下的，比如UIView的结构，一层一层往下，而响应链刚好相反，是从最底层发起，一直把事件往上抛，直到有人能处理为止，比如touch事件。</p>
+
+<h2>装饰 (decorator) / 策略 (strategy)</h2>
+
+<p>装饰和策略的目的都是一样的，都是改变一个对象的行为，比如给数据流加上缓存功能，给请求加上加密。</p>
+
+<p>装饰主要是修饰一个方法或者一个类来改变行为，主要是添加一些其他行为，比如缓存等。这样既能保持原来的接口和代码，又能增加修饰。</p>
+
+<p>而策略主要是配置不同的行为，比如不同的加密方式，一般策略是作为一个成员来控制行为，这样既能保证封装，又能在有限的范围内添加行为。</p>
+
+<h2>外观 (facade)</h2>
+
+<p>外观非常简单，主要是为了提供给外部一个统一的接口，而隐藏内部实现。主要应用在类库中。</p>
+
+<h2>享元 (flyweight)</h2>
+
+<p>享元主要是为了使用共享内存，比如字体等比较耗内存的地方。</p>
+
+<h2>命令 (command)</h2>
+
+<p>命令模式主要把行为封装，可以动态的配置行为，这个用已有的多自己写比较少</p>
+
+<h2>解释器 (interpreter)</h2>
+
+<p>这个主要用在解释语言上，比较少见</p>
+
+<h2>迭代器 (iterator)</h2>
+
+<p>非常常见的模式，隐藏了内部实现来解决遍历问题。</p>
+
+<h2>中介者 (mediator)</h2>
+
+<p>在很多场景下，我们并不能整理出层次关系，或者模块间本来就很独立，这样相互交互导致了网状结构，从而一片混乱。中介者把网状结构改变为星型结构，所有模块都与中介者交互，这样能够独立模块，减少耦合度。但同时也有个问题，就是中介者有可能成为一个很复杂的模块。</p>
+
+<h2>备忘录 (memento)</h2>
+
+<p>这个相当于undo manager，一般用的比较少，往往和命令模式一起使用，只是命令中除了行为外还需要取消行为的方法，这是实现撤销功能的一种方法。</p>
+
+<h2>观察者 (observer)</h2>
+
+<p>这个在ios中也非常常见，主要应用场景是接受者未知，而且数量未知。</p>
+
+<h2>状态 (state)</h2>
+
+<p>这是个封装一般性行为的模式，比如网络连接，中间有很多状态，但连接、重连、断开行为都是一样的，使用状态模式来封装这些行为，而连接失败等业务行为放在子类中实现，从而避免了网络行为中参杂一些其他逻辑。</p>
+
+<h2>模板 (template)</h2>
+
+<p>这个典型的时UIApplication和UIViewController，把公共的方法提取到父类，具体业务放到子类，相当于抽象类的作用</p>
+
+<h2>访问者 (visitor)</h2>
+
+<p>访问者和迭代器在功能上很类似，但是从设计上很不同，迭代器如果遍历不同对象时，必须要用到运行时类型检查，从而导致一个问题，在对象类型越来越多的情况下，这里会越来越复杂，而且增加一种类型每个这种地方都要修改。visitor模式能够封装这些类型，如果增加一种类型，只要修改visitor类就可以了。好处显而易见，但坏处也是有的，增加了封装，导致更加抽象，对于一些不熟悉的人来说可能会有些麻烦。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2013学年总结之语言篇]]></title>
+    <link href="http://djs66256.github.io/blog/2014/08/03/2013%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93%E4%B9%8B%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%AF%87/"/>
+    <updated>2014-08-03T00:00:00+08:00</updated>
+    <id>http://djs66256.github.io/blog/2014/08/03/2013学年总结之编程语言篇</id>
+    <content type="html"><![CDATA[<p>本篇为总结之前了解的一些语言与特性，当然，我并不是语言专家，大部分都是走马观花，难免有纰漏之处。</p>
+
+<!--more-->
+
+
+<h2>java</h2>
+
+<p>作为一个纯粹的面向对象语言，java应该是非常的典型的，而且不像c/c++，也不像Objective-c一样需要我们手动管理内存，这大大降低了我们学习和使用成本。同时有大量的完整的类库和跨平台的能力，所以Google选择java作为android的语言实在是完美。</p>
+
+<p>先说说特性，因为所有类型都是对象，所以基本类型还是具有自动装箱拆箱的功能。最有意思的是java的内部类，它提供了另外一种回调的方式。</p>
+
+<p>但是java也有很大的缺陷，最大的缺陷是性能，如果Google能够推广最新的JIT技术，那这个问题会减轻很多。同时，java也是一种非常啰嗦的语言，甚至比Objective-c还要啰嗦，OC只是名字比较啰嗦而已。</p>
+
+<h2>cpp</h2>
+
+<p>c++怎么说呢，本来就不是纯粹的面向对象语言，为了兼容c，在一些方面不得不做一些让步。但是也有很多有意思的特性，比如操作符重载，隐式转化，智能指针等等。同时c++强大的模板和模板元编程，又让c++成为了更加强大而有技巧的语言。当然，这也大大增加了学习成本和难度，同时写法上也不够简明易懂。</p>
+
+<h2>Sql</h2>
+
+<p>这个什么都不用说了吧，应该算是基本技能。概括起来：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CREATE TABLE
+</span><span class='line'>SELECT
+</span><span class='line'>INSERT
+</span><span class='line'>DELETE
+</span><span class='line'>UPDATE
+</span><span class='line'>ALTER</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>lua</h2>
+
+<p>这是一门特别轻量级的语言，以及及其简单的语法和数据结构，所有数据都是字典类型，同时又有一定的面向对象的能力。当然，缺点也是非常明显的，作为一门独立的语言，功能还是太弱，也缺少相应的类库，所以只能嵌入程序中使用。</p>
+
+<p>虽然说是一门脚本语言，据说效率很高，至于它很快的原因，是否使用了JIT技术，这个还可以继续研究下。</p>
+
+<h2>javascript</h2>
+
+<p>怎么说，最常见的脚本语言，大家都熟悉，语法上像极了java，所以用起来也可以说是得心应手，但是要用到javascript的面向对象却非常复杂，javascript是基于原型来描述面向对象的，所以javascript里面没有class，所有的class都是实例对象，导致看起来总感觉怪怪的。</p>
+
+<p>javascript最好用的地方莫过于他的函数式编程了，可以说闭包和函数式编程才是javascript吸引人的地方。</p>
+
+<h2>Node.js</h2>
+
+<p>Node可以说是javascript服务端(也是本地)的实现，而且使用了V8引擎，不过这个标准目前还不那么稳定，不过他在服务器端优秀的表现，绝对是有值得了解的必要。</p>
+
+<h2>python</h2>
+
+<p>这是我非常想学的语言，并不是说Python有多么完美，而是Python既拥有脚本语言的特性，又能够很容易的使用面向对象。他避免了shell脚本晦涩难懂的语句，同时增强了字符串等操作，所以完全可以使用Python来替代shell脚本，而Python一般是linux和unix的标配，所以应用也很广泛。</p>
+
+<p>Python能够很好的支持面向对象，而且语法简单，所以除了做shell脚本外还能支持大型项目。完善的包管理机制也同样提供了很多方便。可以说在这方面Python完全可以代替java，但是由于Python是一门弱类型语言，所以在一些调试和代码检查方面可能会差一点。</p>
+
+<p>Python中比较有意思的一个是函数装饰器，像<code>@static_method</code>，这个思想倒是值得我们借鉴。另外还有<code>with</code>的语法也比<code>try...catch...</code>简洁很多。可以说Python非常适合做模型。</p>
+
+<h2>Liquid</h2>
+
+<p>这是一门模板语言，目前github上的page就是用jykell+liquid完成的，而且它还和django的模板语言特别相似。当然，模板语言的弱点十分明显，可以说都算不上一门语言。除此之外还有很多模板语言，使用也非常简单。</p>
+
+<h2>HTML/CSS/Less</h2>
+
+<p>对于想了解网页方面知识，这个应该是基础的基础，作为标签语言，也非常简单，没有什么特别的技巧，但是对于布局却是一个启发，像android那样的布局，对多尺寸适配会方便很多。</p>
+
+<p>Less作为对css的一个补充，还是非常不错的，可以减少很多的工作，还能编译完再发布。</p>
+
+<h2>Markdown</h2>
+
+<p>作为一种简化版的富文本编辑方式，非常简单易懂，比使用html更简单，也比使用word之类的更灵活，还能直接转换为html，程序员必备。</p>
+
+<h2>django &amp; express</h2>
+
+<p>这两个分别是基于Python和Node的一套网站框架，django比较成熟，已经有很多的人在使用，基本功能都已经包含。express比较新，一些功能可以通过包来安装。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2013学年总结之工具篇]]></title>
+    <link href="http://djs66256.github.io/blog/2014/08/03/2013%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93%E4%B9%8B%E5%B7%A5%E5%85%B7%E7%AF%87/"/>
+    <updated>2014-08-03T00:00:00+08:00</updated>
+    <id>http://djs66256.github.io/blog/2014/08/03/2013学年总结之工具篇</id>
+    <content type="html"><![CDATA[<h4>git/svn &amp; markdown &amp; vim &amp; dash/zeal</h4>
+
+<!--more-->
+
+
+<h2>Git/Svn</h2>
+
+<p>在软件开发和很多场景下，我们都需要版本管理工具，现在最流行的就有svn和git，svn使用非常简单，最常用的命令如下：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>svn checkout
+</span><span class='line'>svn update
+</span><span class='line'>svn commit
+</span><span class='line'>svn log</span></code></pre></td></tr></table></div></figure>
+
+
+<p>同时svn也拥有很多的图形客户端，对那些不是开发人员的人也比较友好。但是svn有个致命的弱点，就是不能脱离服务器，对于平时使用时还是有很多不便。而且svn对于分支开发支持也不太友好。</p>
+
+<p>还好，我们有git来解决svn的问题。git的使用稍微比svn麻烦一些，需要了解一些分支等的概念，但是作为日常使用也和svn差不多，比较常用的命令有：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git init
+</span><span class='line'>git clone
+</span><span class='line'>git checkout
+</span><span class='line'>git add
+</span><span class='line'>git commit 
+</span><span class='line'>git fetch/pull
+</span><span class='line'>git push
+</span><span class='line'>git rebase / merge
+</span><span class='line'>git log</span></code></pre></td></tr></table></div></figure>
+
+
+<p>总体使用上感觉如果是一些比较复杂的需要多人开发的，而且项目比较大型，周期比较长，或者需要并行开发的都适合使用git。这是一个非常有用的工具。</p>
+
+<p>git的图形软件有：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SourceTree
+</span><span class='line'>github</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Markdown</h2>
+
+<p>作为富文本文件格式，markdown比word更加简单轻便，而且适用场景多，可以直接翻译为html，特别适合网络文档，同时对代码的支持也比较好。甚至可以直接支持html，对普通的文档博客来说已经足够了。</p>
+
+<p>客户端程序有：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>haroopad/Mou</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>VIM</h2>
+
+<p>这个是UNIX环境必备的编辑工具，而且使用起来也不必使用鼠标慢。</p>
+
+<h2>VIMDIFF</h2>
+
+<p>这个diff工具非常强大，但是全部使用键盘，感觉没有使用鼠标舒服，但是偶尔用用还是非常不错的</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>]c / [c
+</span><span class='line'>dp / do
+</span><span class='line'>zo / zc</span></code></pre></td></tr></table></div></figure>
+
+
+<p>配合git的difftool和mergetool，还是不错的。</p>
+
+<h2>Dash/Zeal</h2>
+
+<p>说到官方文档，mac下面有个非常好用的工具Dash，但是一直遗憾win和linux环境下一直没有一个适合的工具，直到有个开源项目的开始Zeal，现在Zeal已经比较完善了，几乎可以媲美Dash了。Zeal在github上有托管。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2013学年总结之iOS篇]]></title>
+    <link href="http://djs66256.github.io/blog/2014/08/03/2013%E5%AD%A6%E5%B9%B4%E6%80%BB%E7%BB%93%E4%B9%8BiOS%E7%AF%87/"/>
+    <updated>2014-08-03T00:00:00+08:00</updated>
+    <id>http://djs66256.github.io/blog/2014/08/03/2013学年总结之iOS篇</id>
+    <content type="html"><![CDATA[<p>这里并不是高深的ios的研究或者教程，相信这些东西查阅官方资料才是最靠谱的，仅仅只是对一些基本技能的总结和概括</p>
+
+<!--more-->
+
+
+<h2>Core Graph</h2>
+
+<p>ios绘图基本方法，遗憾的是该api是c的，不过api简单易懂，非常容易使用。除了在draw方法里面使用外，还可以使用<code>UIGraphicsBeginImageContext</code>生成一个图片的上下文，通过代码来获取一些图片，而不再需要UI提供图片。</p>
+
+<p>基本使用方式，注意记得保存和恢复上下文即可:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CGContextSaveGState(ctx);
+</span><span class='line'>[color set];
+</span><span class='line'>CGContextDraw...
+</span><span class='line'>CGContextRestoreGState(ctx);</span></code></pre></td></tr></table></div></figure>
+
+
+<p>有一个非常有意思的贝塞尔曲线，具体算法我还没怎么搞明白，不过只要有这个，可以说，我们可以画出任意的图形了！</p>
+
+<p>说到绘图，这里不仅仅能绘制和填充简单的线条、图片外，还能绘制PDF，但是在手机设备上必须放到异步绘制，可以有两种做法：</p>
+
+<pre><code>1. 异步绘制到ImageContext上，以图片的形式展现
+2. 使用CATiledLayer，这个属于Core Animation部分了
+</code></pre>
+
+<h2>Core Animation</h2>
+
+<p>以CA开头的类很多，虽然看名字这个是一个动画的框架，但是不仅仅如此，所有的图层都属于该框架。</p>
+
+<p>说到动画，不得不说不总结下几类动画的实现方式：</p>
+
+<pre><code>1. 基于UIView的动画，所有方法定义在UIView(UIViewAnimation)，这个是最简单，最常用的方法。
+2. 基于CALayer的动画，基于UIView的动画还是有不少局限，只能实现比较简单的移动旋转等，当我们需要一些复杂的动画或者无限循环的动画时，就需要基于CALayer的动画
+3. 基于定时器的自定义动画，值得注意的是，这里的定时器最好是使用CADisplayLink，这个才是真正基于帧的定时器
+</code></pre>
+
+<p>core animation是基于keyPath实现的，写法上有些怪异，但是仅仅比基于UIView的动画稍多一点工作量，但绝对物超所值。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[UIView animateWithDuration:2 animations:^{
+</span><span class='line'>    CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:@"position"];
+</span><span class='line'>    anim.fromValue = [NSValue valueWithCGPoint:position1];
+</span><span class='line'>    anim.toValue = [NSValue valueWithCGPoint:position2];
+</span><span class='line'>    anim.duration = 3;
+</span><span class='line'>    anim.cumulative = YES;
+</span><span class='line'>    anim.repeatCount = HUGE_VAL;
+</span><span class='line'>    [view.layer addAnimation:anim forKey:@"ps"];
+</span><span class='line'>}];</span></code></pre></td></tr></table></div></figure>
+
+
+<p>还有一个比较有意思的图层：<code>CAShapeLayer</code>；使用这个能够完成你意想不到的一些效果，专门为动画而生的图层！</p>
+
+<h2>Core Text</h2>
+
+<p>苹果超级强大的文字绘制框架。core text绘制使用的是<code>AttributeString</code>，遗憾的是这个类在ios6以后才比较实用，很多属性是后面才加进来的，不过这以没什么关系。</p>
+
+<p>首先我们来划分一下core text：</p>
+
+<pre><code>1. 绘制内容，即AttributeString
+2. 布局系统，core text除了内容外大部分都是布局系统
+3. 绘制系统，这个需要到最后一步才会真正的绘制到画布上，即`CTFrameDraw`
+</code></pre>
+
+<p>这里最有趣最值得研究的是布局系统，我们可以设置文字绘制的位置范围，还可以通过kCTRunDelegateAttributeName来实现图文混排，还能计算文字绘制完毕后所占用的大小，api比较多，但是实现起来确实非常简单。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString(attributeStr);
+</span><span class='line'>CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), pathref, NULL);
+</span><span class='line'>CTFrameDraw(frame, ctx);</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Core Image</h2>
+
+<p>CIImage的使用也是非常的简单，只是系统提供了很多的滤镜，要一个个的了解过来还是需要很多的时间。平时如果不需要有图片编辑功能，我们还真用不到。这个是在GPU的内存空间中转换的，如果你从用户内存空间拷贝到GPU内存，再做渲染，再拷回用户内存，这样的开销其实也很大。网上也有基于此的开源项目GPUImage。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"];
+</span><span class='line'>[filter setValue:image forKey:kCIInputImageKey];
+</span><span class='line'>[filter setValue:@0.8f forKey:kCIInputIntensityKey];  
+</span><span class='line'>CIImage *result = [filter valueForKey:kCIOutputImageKey];</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Core Data</h2>
+
+<p>又是一个非常庞大而复杂的框架，如果要真正理解这个框架还真要费很大力气，毕竟官方教程就快上1k页了。除此之外还要了解一些keyPath、predicate表达式等等。但是学会使用确实非常简单。core data毕竟不是SQL，它还需要支持xml等格式，所以一些复杂的搜索逻辑或者优化分表什么的就不行了，如果你不需要如此复杂的功能，并且也不准备维护SQL语句，使用core data当然是没得选了。</p>
+
+<p>说到数据库，core data是根据对象为单位的，而我们自己使用的时候却没有这个限制，在这个问题上，我更倾向于根据对象来操作，这样不仅能统一接口，还能避免很多错误和后期维护工作，我们大可不必担心那么点的性能损耗。</p>
+
+<h2>Image IO</h2>
+
+<p>又是一个很有意思的接口，当我们从网络下载大图片的时候，是等我们下完再展现还是，下多少展现多少，这个接口正好适合你！它能够拼装不完整的图片，除此之外还能创建缩略图等等。</p>
+
+<h2>多线程</h2>
+
+<p>说到多线程，我们可以总结下ios里面的几种实现方式：</p>
+
+<pre><code>1. Unix接口，pthread，这个我觉得除非是移植代码，应该没人使用吧
+2. NSThread，相当于pthread的OC版，但是不仅仅如此
+3. RunLoop，这个应该不算是多线程的实现方式，类似于轮询或者多路复用的结果，但从结果上来看是异步的
+   RunLoop一般与NSThread配合使用，需要一个事件源(NSPort)，这部分还是挺有意思的
+4. GCD，可以说是系统级的线程池，除了单纯的多线程外，还能提供监听句柄(如file，socket)的状态变更（一种多路复用？）
+   但是GCD一旦触发，便不能取消，这也是值得注意的地方，而且Block的使用也存在一些自身的问题，使用不当可能造成线程的疯狂创建而崩溃。
+</code></pre>
+
+<p>在这方面还需要再多研究研究</p>
+
+<h2>Runtime</h2>
+
+<p>在Objc Runtime中对我们比较有用的两条是：</p>
+
+<pre><code>1. objc_setAssociatedObject和objc_getAssociatedObject，可以给一个已存在的对象（比如我们无法修改的系统类和第三方库类），动态增加成员
+2. method_exchangeImplementations，置换方法，比如置换系统方法，增加我们自定义的功能逻辑。这个方法虽然有些时候很方便，但是也会带来不必要的一些麻烦，而且改变的是全局的方法，所以也有一定的风险。
+</code></pre>
+
+<h2>NSPredicate</h2>
+
+<p>苹果有一个非常强大的匹配语言，就是谓词表达式，他甚至可以说是正则表达式的超集，缺点就是只能返回bool值。</p>
+
+<p>它也是基于keyPath，不仅仅能匹配普通的正则表达式，还能够过滤数组等集合。</p>
+
+<p>比如：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>// 正则表达式
+</span><span class='line'>SELF MATCHES ...
+</span><span class='line'>// 对象是否是以下几个对象之中
+</span><span class='line'>@"SELF IN %@", @[@"a", @"b", @"c"]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>代码显得非常简洁易懂，所以在大部分时候我们都可以使用这个来代替复杂的编码</p>
+
+<h2>Block</h2>
+
+<p>block是一种实现闭包的方式，但是并不完美，特别是内存泄露问题，使用不当非常容易造成内存泄露。</p>
+
+<p>block主要分为：</p>
+
+<pre><code>1. 栈上的Block
+2. 数据区的Block
+3. 堆上的Block
+</code></pre>
+
+<p>如果你对这3种情况不是很了解的话，最好不要使用太多的block。</p>
+
+<p>一般来说，block使用场景为明确知道结束点的逻辑中，比如GCD，alertView，http请求等等，这些具有明确结束点，而且回调内容也不可能很复杂，所以非常适合block的发挥，但比如不同的controller间，如果采用block，可能就会导致循环引用，因为block在没有被释放或者被执行过之前，block内所持有的对象就不会被释放。</p>
+
+<p>block的使用需要特别小心，我们在页面编程中尽量不要选择block来回调。</p>
+
+<h2>NSFormatter</h2>
+
+<p><code>NSDateFormatter</code>是我们使用最多的格式化类，但是注意，创建这个比较损耗资源，所以尽量不要在循环中创建，有人甚至直接做一个单例来使用。</p>
+
+<p>另外一个不常用但非常强大的格式化类是<code>NSNumberFormatter</code></p>
+
+<p>另外，我们可以自定义一些formatter，比如时间格式化为“今天”，“一周前”，“几个月前”等等之类的，还是比较符合理解和规范的。</p>
+
+<h2>NSScanner</h2>
+
+<p>遍历字符串的一种方法，是实现词法分析等功能的基础。这个也能解析一些数字，不仅仅是10进制。</p>
+]]></content>
+  </entry>
+  
+</feed>
